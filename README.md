@@ -32,19 +32,20 @@
 
 
 ```	groovy
-        allprojects {
+   allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
 		}
-	}
+   }
 ```
 
 ### Step 2. Add the dependency
 
 ``` groovy
    dependencies {
-      implementation 'com.github.Blankyn:ProgressManager:1.0.0'
+        implementation 'com.github.Blankyn:ProgressManager:1.0.0'
+        implementation 'com.squareup.okhttp3:okhttp:4.9.2'
    }
 ```
 
