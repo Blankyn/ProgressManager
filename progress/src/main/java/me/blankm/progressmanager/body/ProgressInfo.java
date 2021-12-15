@@ -42,8 +42,8 @@ public class ProgressInfo implements Parcelable {
         this.id = id;
     }
 
-    void setCurrentbytes(long currentbytes) {
-        this.currentBytes = currentbytes;
+    void setCurrentBytes(long currentBytes) {
+        this.currentBytes = currentBytes;
     }
 
     void setContentLength(long contentLength) {
@@ -62,7 +62,7 @@ public class ProgressInfo implements Parcelable {
         this.finish = finish;
     }
 
-    public long getCurrentbytes() {
+    public long getCurrentBytes() {
         return currentBytes;
     }
 
@@ -92,8 +92,8 @@ public class ProgressInfo implements Parcelable {
      * @return
      */
     public int getPercent() {
-        if (getCurrentbytes() <= 0 || getContentLength() <= 0) return 0;
-        return (int) ((100 * getCurrentbytes()) / getContentLength());
+        if (getCurrentBytes() <= 0 || getContentLength() <= 0) return 0;
+        return (int) ((100 * getCurrentBytes()) / getContentLength());
     }
 
     /**

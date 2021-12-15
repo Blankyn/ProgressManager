@@ -166,13 +166,13 @@ public final class ProgressManager {
     /**
      * 当在 {@link ProgressRequestBody} 和 {@link ProgressResponseBody} 内部处理二进制流时发生错误
      * 会主动调用 {@link ProgressListener#onError(long, Exception)},但是有些错误并不是在它们内部发生的
-     * 但同样会引起网络请求的失败,所以向外面提供{@link ProgressManager#notifyOnErorr},当外部发生错误时
+     * 但同样会引起网络请求的失败,所以向外面提供{@link ProgressManager#notifyOnError},当外部发生错误时
      * 手动调用此方法,以通知所有的监听器
      *
      * @param url {@code url} 作为标识符
      * @param e   错误
      */
-    public void notifyOnErorr(String url, Exception e) {
+    public void notifyOnError(String url, Exception e) {
         checkNotNull(url, "url cannot be null");
         forEachListenersOnError(mRequestListeners, url, e);
         forEachListenersOnError(mResponseListeners, url, e);

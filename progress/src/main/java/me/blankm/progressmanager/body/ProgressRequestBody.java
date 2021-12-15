@@ -128,7 +128,7 @@ public class ProgressRequestBody extends RequestBody {
                                 // Runnable 里的代码是通过 Handler 执行在主线程的,外面代码可能执行在其他线程
                                 // 所以我必须使用 final ,保证在 Runnable 执行前使用到的变量,在执行时不会被修改
                                 mProgressInfo.setEachBytes(finalTempSize);
-                                mProgressInfo.setCurrentbytes(finalTotalBytesRead);
+                                mProgressInfo.setCurrentBytes(finalTotalBytesRead);
                                 mProgressInfo.setIntervalTime(finalIntervalTime);
                                 mProgressInfo.setFinish(finalTotalBytesRead == mProgressInfo.getContentLength());
                                 listener.onProgress(mProgressInfo);
