@@ -47,7 +47,7 @@ public class MainFragment extends Fragment {
     private View mRootView;
 
     private ProgressInfo mLastDownloadingInfo;
-    private ProgressInfo mLastUploadingingInfo;
+    private ProgressInfo mLastUploadingInfo;
     private Handler mHandler;
     private static final String URL_BUNDLE_KEY = "url_bundle_key";
 
@@ -112,19 +112,19 @@ public class MainFragment extends Fragment {
                 // 又开始了新的上传或下载操作,那现在就需要用到 id(请求开始时的时间) 来区分正在执行的进度信息
                 // 这里我就取最新的上传进度用来展示,顺便展示下 id 的用法
 
-                if (mLastUploadingingInfo == null) {
-                    mLastUploadingingInfo = progressInfo;
+                if (mLastUploadingInfo == null) {
+                    mLastUploadingInfo = progressInfo;
                 }
 
                 //因为是以请求开始时的时间作为 Id ,所以值越大,说明该请求越新
-                if (progressInfo.getId() < mLastUploadingingInfo.getId()) {
+                if (progressInfo.getId() < mLastUploadingInfo.getId()) {
                     return;
-                } else if (progressInfo.getId() > mLastUploadingingInfo.getId()) {
-                    mLastUploadingingInfo = progressInfo;
+                } else if (progressInfo.getId() > mLastUploadingInfo.getId()) {
+                    mLastUploadingInfo = progressInfo;
                 }
 
 
-                int progress = mLastUploadingingInfo.getPercent();
+                int progress = mLastUploadingInfo.getPercent();
                 mUploadProgress.setProgress(progress);
                 mUploadProgressText.setText(progress + "%");
                 Log.d(TAG, "--Upload-- " + progress + " %");
